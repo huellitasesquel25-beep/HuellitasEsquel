@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Huellitas | Contacto</title>
+  <meta name="description" content="Ponete en contacto con Huellitas: consultas, pedidos y atención personalizada." />
+
+  <!-- ================================
+       FUENTES
+  ================================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- ================================
+       ICONO
+  ================================= -->
+  <link rel="icon" type="image/png" href="imagenes/png/icono.png" />
+
+  <!-- ================================
+       CSS
+  ================================= -->
+  <link rel="stylesheet" href="css/estilo.css" />
+  <link rel="stylesheet" href="css/medias.css" />
+
+  <!-- ================================
+       FONT AWESOME
+  ================================= -->
+  <script src="https://kit.fontawesome.com/440bac5161.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- ================================
+       HEADER
+  ================================= -->
+  <header>
+    <div class="contenedor barra-nav">
+      <!-- Logo -->
+      <a class="marca" href="index.html" aria-label="Ir al inicio">
+        <span class="logo" aria-hidden="true">
+          <img src="imagenes/assesst/huellitas.png" alt="Logo Huellitas" />
+        </span>
+        <span>Huellitas</span>
+      </a>
+
+      <!-- Botón hamburguesa -->
+      <input type="checkbox" id="menu-toggle" aria-label="Abrir menú" />
+      <label for="menu-toggle" class="hamburguesa abrir" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+
+      <!-- Menú principal -->
+      <nav aria-label="Navegación principal">
+        <ul>
+          <li class="submenu">
+            <a href="#">Productos ▾</a>
+            <ul class="dropdown">
+              <li><a href="indumentaria.html">Indumentaria</a></li>
+              <!--
+              <li><a href="mantas">Mantas</a></li>
+              -->
+              <li><a href="accesorios.html">Accesorios para Gatos</a></li>
+            </ul>
+          </li>
+          <li><a href="nosotros.html" class="activo">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================================
+       SECCIÓN CONTACTO
+  ================================= -->
+  <section id="contacto" class="seccion">
+    <div class="contenedor">
+      <h1>Contacto</h1>
+      <p>¿Tenés dudas, consultas o querés hacer un pedido? Escribinos:</p>
+
+      <form class="formulario-contacto" action="#" method="POST"> <!-- Acá reemplazar en action="#" por el nombre del php, en este caso action="enviar.php"-->
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+        </div>
+
+        <div class="campo">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="huellitas.esquel25@gmail.com" required />
+        </div>
+
+        <div class="campo">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribí tu mensaje..." required></textarea>
+        </div>
+
+        <button type="submit" class="boton primario">Enviar</button>
+      </form>
+
+      <div class="info-contacto">
+        <h2>También podés encontrarnos en:</h2>
+            <ul>
+                <li><a href="#ventana-facebook"><i class="fa-brands fa-square-facebook"></i></a> Facebook</li>
+                <li><a href="#ventana-instagram"><i class="fa-brands fa-square-instagram"></i></a> Instagram</li>
+                <li><a href="#ventana-whatsapp"><i class="fa-brands fa-square-whatsapp"></i></a> Whatsapp: +54 9 2945-334965</li>
+            </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================
+       FOOTER
+  ================================= -->
+  <footer>
+    <div class="contenedor">
+      <div class="pie-cuadricula">
+        <!-- Logo + descripción -->
+        <div>
+          <div class="marca" style="margin-bottom:.5rem;">
+            <span class="logo" aria-hidden="true">
+              <img src="imagenes/assesst/huellitas.png" alt="Logo Huellitas" />
+            </span>
+            <span>Huellitas</span>
+          </div>
+          <p>Indumentaria, ropa y también accesorios, mantitas para gatos.</p>
+        </div>
+
+        <!-- Secciones -->
+        <div>
+          <h4>Secciones</h4>
+          <ul>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Ayuda -->
+        <div class="pagos">
+          <h4>Medios de pago</h4>
+          <ul>
+            <li><a href="#">Transferencia <i class="fa-solid fa-money-bill-transfer"></i></a></li>
+            <li><a href="#">QR <i class="fa-solid fa-qrcode"></i></a></li>
+          </ul>
+        </div>
+
+        <!-- Redes sociales -->
+        <div class="social">
+          <h4>Redes</h4>
+          <ul>
+            <li><a href="#ventana-facebook"><i class="fa-brands fa-square-facebook"></i></a></li>
+            <li><a href="#ventana-instagram"><i class="fa-brands fa-square-instagram"></i></a></li>
+            <li><a href="#ventana-whatsapp"><i class="fa-brands fa-square-whatsapp"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Créditos -->
+      <p class="credito">
+        © <span id="y">2025 -</span>
+        <img src="imagenes/assesst/huellitas.png" alt="Logo Huellitas pequeño" />
+        Huellitas | Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

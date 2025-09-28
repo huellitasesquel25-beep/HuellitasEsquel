@@ -1,0 +1,645 @@
+/* =======================================================
+   ================ VARIABLES Y RESET ====================
+   ======================================================= */
+:root {
+  /* Colores de marca y acento */
+  --marca: #8bd3ff;
+  --marca-2: #ffd089;
+  --acento: #a5f0c5;
+
+  /* Colores de texto y elementos */
+  --texto: #ffffff;
+  --muted: #9aa0a6;
+  --peligro: #ff7b7b;
+
+  /* Colores de fondo */
+  --bg: #0f0f14;
+  --tarjeta: rgba(63, 48, 68);
+  --contacto: rgba(63,48, 68, 0.8);
+  --bgfooter: rgb(28, 34, 44); 
+  --header-menu: rgb(133, 64, 156);
+  --sub-menu: rgba(77, 53, 85, 0.95);
+
+  /* Sombras y efectos */
+  --sombra: 0 10px 25px rgba(0,0,0,.35);
+  --sombra-boton: rgba(0, 162, 255, 0.8);
+  --sombra-boton-2: rgba(55, 255, 155, 0.8);
+
+  /* Otros */
+  --radio: 1.25rem;
+  --color-fondo-body: url(../imagenes/assesst/fondo02.jpg);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* =======================================================
+   ==================== BODY =============================
+   ======================================================= */
+body {
+  background-image: var(--color-fondo-body);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+/* =======================================================
+   ================ ELEMENTOS BÁSICOS ====================
+   ======================================================= */
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: .75rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 3.25rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: .5rem;
+}
+
+/* =======================================================
+   ================ CONTENEDORES =========================
+   ======================================================= */
+.contenedor {
+  width: min(1200px, 90%);
+  margin: 0 auto;
+}
+
+.seccion {
+  padding: 2rem 0 2rem;
+  backdrop-filter: blur(6px);
+  background: rgba(26, 26, 26, 0.5);
+}
+
+.seccion h1{
+  text-shadow: 0 2px 3px rgba(0,0,0,0.8);
+  padding-bottom: 1.2rem;
+}
+
+.seccion h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  margin-top: 2.5rem;
+  text-shadow: 0 2px 3px rgba(0,0,0,0.8);
+}
+
+.seccion p {
+  margin: 1.25rem 0 2rem;
+  color: var(--texto);
+  font-size: 1.5rem;
+  text-shadow: 0 2px 3px rgba(0,0,0,0.8);
+}
+
+.seccion-cuadricula {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+.seccion_arte {
+  text-align: center;
+}
+
+.seccion_gato {
+  width: min(420px, 90%);
+  margin-inline: auto;
+}
+
+/* =======================================================
+   ========== ENCABEZADO Y NAVEGACIÓN ====================
+   ======================================================= */
+header {
+  background: var(--header-menu);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.342);
+  color: #ffffff;
+}
+
+.barra-nav {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 4rem;
+  padding: 2rem 0 1rem;
+}
+
+.marca {
+  font-weight: 600;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+
+}
+
+.logo {
+  font-size: 1.35rem;
+}
+
+.logo img {
+  max-width: 80px;
+  height: auto;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  padding: .25rem 0;
+  position: relative;
+  font-size: 1.25rem;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background: var(--marca);
+  transition: width .3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.hamburguesa {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 32px;
+  height: 28px;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburguesa span {
+  height: 3px;
+  width: 100%;
+  background: var(--texto);
+  border-radius: 2px;
+}
+
+/* =======================================================
+   ================== SUBMENU ============================
+   ======================================================= */
+.submenu {
+  position: relative;
+}
+
+.submenu > a {
+  cursor: pointer;
+}
+
+.dropdown {
+  position: absolute;
+  top: 115%;
+  left: 0;
+  background: var(--sub-menu);
+  border-radius: .5rem;
+  padding: .75rem 0;
+  display: none;
+  flex-direction: column;
+  min-width: 250px;
+  box-shadow: var(--sombra);
+  border: 1px solid rgba(255, 255, 255, 0.342);
+  transition: all 0.4s ease;
+}
+
+.dropdown li a {
+  display: block;
+  padding: .5rem 1rem;
+  color: var(--texto);
+  transition: background .25s;
+  font-size: 1.1rem;
+}
+
+.dropdown li a:hover {
+  background: rgba(255,255,255,.08);
+  color: var(--marca);
+}
+
+.submenu:hover .dropdown {
+  display: flex;
+}
+
+/* =======================================================
+   ================== CUADRICULAS ========================
+   ======================================================= */
+.cuadricula {
+  display: grid;
+  gap: 2rem;
+}
+
+.col-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.col-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* =======================================================
+   ================== TARJETAS ===========================
+   ======================================================= */
+.tarjeta {
+  background: var(--tarjeta);
+  border-radius: var(--radio);
+  padding: 1.5rem;
+  box-shadow: var(--sombra);
+  display: flex;
+  flex-direction: column;
+}
+
+.tarjeta h3 {
+  margin-top: 1rem;
+  color: var(--texto);
+}
+
+.tarjeta p {
+  flex-grow: 1;
+  color: var(--muted);
+  margin: .5rem 0 1rem;
+  font-size: 1rem;
+}
+
+.tarjeta .boton {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.tarjeta .boton:hover {
+  opacity: 1;
+  box-shadow: 0 0 20px var(--sombra-boton);
+  text-shadow: 0 0 5px var(--sombra-boton-2);
+  border: 1px solid rgba(68, 130, 255, 0.85);
+}
+
+/* =======================================================
+   ================== BOTONES ============================
+   ======================================================= */
+.boton {
+  display: inline-block;
+  padding: .65rem 1.25rem;
+  border-radius: .65rem;
+  font-weight: 500;
+  transition: background .25s, color .25s;
+  background: rgba(255,255,255,.06);
+}
+
+.boton.primario {
+  background: rgba(43, 53, 75, 0.85);
+  color: #ffffff;
+}
+
+.boton.primario:hover {
+  background: rgba(51, 63, 87, 0.85);
+}
+
+.boton:hover {
+  background: rgba(255,255,255,.12);
+}
+
+/* =======================================================
+   ========= FORMULARIO DE CONTACTO ======================
+   ======================================================= */
+.formulario-contacto {
+  display: grid;
+  gap: 1.25rem;
+  margin: 2rem auto 0; /* auto para centrarlo */
+  background: var(--contacto);
+  padding: 2rem;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+
+  max-width: 800px; /* 👈 ancho máximo */
+  width: 100%;      /* se adapta en móviles */
+}
+
+.formulario-contacto .campo {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.formulario-contacto label {
+  font-weight: 500;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+  padding: .75rem 1rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: .5rem;
+  background: rgba(255,255,255,0.08);
+  color: var(--texto);
+  font-size: 1rem;
+}
+
+.formulario-contacto input:focus,
+.formulario-contacto textarea:focus {
+  outline: none;
+  border-color: var(--marca);
+  box-shadow: 0 0 5px var(--marca);
+}
+
+.formulario-contacto .boton {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.formulario-contacto .boton:hover {
+  opacity: 1;
+  box-shadow: 0 0 20px var(--sombra-boton);
+  text-shadow: 0 0 5px var(--sombra-boton-2);
+  border: 1px solid rgba(68, 130, 255, 0.85);
+}
+
+.info-contacto {
+  margin-top: 3rem;
+}
+
+.info-contacto h2 {
+  margin-bottom: 1rem;
+}
+
+.info-contacto ul {
+  display: grid;
+  gap: .75rem;
+}
+
+.info-contacto li {
+  margin-right: .5rem;
+  color: var(--texto);
+  font-size: 1.2rem;
+}
+
+/* =======================================================
+   ===================== FOOTER ==========================
+   ======================================================= */
+footer {
+  background: var(--bgfooter);
+  backdrop-filter: blur(6px);
+  border-top: 1px solid rgba(138, 138, 138, 0.8);
+  padding: 3rem 0 2rem;
+  font-size: .95rem;
+  color: #ffffff;
+}
+
+.marca .logo img {
+  max-width: 80px;
+  height: auto;
+}
+
+.pie-cuadricula {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+footer h4 {
+  margin-bottom: .75rem;
+  font-size: 1.05rem;
+}
+
+footer ul {
+  display: grid;
+  gap: .5rem;
+}
+
+.credito {
+  text-align: center;
+  font-size: .85rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  color: antiquewhite;
+}
+
+.credito img {
+  max-width: 20px;
+  height: auto;
+}
+
+/* =======================================================
+   ============= REDES SOCIALES ==========================
+   ======================================================= */
+.pie-cuadricula .social {
+  position: static; /* se integra a la grilla */
+}
+
+.pie-cuadricula .social ul {
+  display: flex;
+  gap: 1rem;
+  margin-top: .5rem;
+}
+
+.pie-cuadricula .social i {
+  padding: 10px;
+  color: var(--texto);
+  opacity: 0.7;
+  font-size: 22px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.pie-cuadricula .social i:hover {
+  opacity: 1;
+  border: 1px solid var(--marca);
+  box-shadow: 0 0 10px var(--marca);
+}
+
+/* =======================================================
+   ===================== PAGOS ===========================
+   ======================================================= */
+.pie-cuadricula .pagos i {
+  padding: 10px;
+  color: var(--texto);
+  opacity: 0.7;
+  font-size: 22px;
+}
+
+/* =======================================================
+   ===================== MODAL ===========================
+   ======================================================= */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(15, 15, 20, 0.85);
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+/* Mostrar modal cuando es target */
+.modal:target {
+  display: flex;
+}
+
+/* Contenido */
+.modal-contenido {
+  position: relative; /* imprescindible para que .modal-contenido .cerrar se posicione dentro */
+  overflow: visible; 
+  background: var(--tarjeta);
+  border-radius: var(--radio);
+  padding: 2rem;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: var(--sombra);
+  color: var(--texto);
+}
+
+.modal-detalle {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.modal-detalle img {
+  max-width: 450px;
+  border-radius: .75rem;
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Cerrar */
+.modal-contenido .cerrar {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  font-size: 2rem;
+  color: var(--peligro);
+  z-index: 20;       /* encima del contenido */
+  transform: none;   /* reset por si hay transform previos */
+  transition: transform 0.15s ease;
+}
+
+.modal-contenido .cerrar:hover {
+  transform: scale(1.2);
+}
+
+/* Imagen */
+.modal-img {
+  max-width: 250px;
+  margin: 1rem auto;
+  display: block;
+  border-radius: .5rem;
+  box-shadow: var(--sombra);
+}
+
+/* Opciones */
+.opciones {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.opcion h3 {
+  margin-bottom: .5rem;
+  font-size: 1.2rem;
+}
+
+.colores label,
+.talles label {
+  display: block;
+  margin-bottom: .4rem;
+  cursor: pointer;
+}
+
+.colores label, .talles label {
+  background: rgba(255,255,255,0.08);
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+  cursor: pointer;
+  transition: background .3s, color .3s;
+  font-size: .80rem;
+}
+
+.colores label:hover, .talles label:hover {
+  background: var(--marca);
+  color: #000;
+}
+
+/* Inputs ocultos */
+.colores input,
+.talles input {
+  display: none;
+}
+
+/* Seleccionado */
+.colores input:checked + span,
+.talles input:checked + span {
+  background: var(--acento);
+  color: #000;
+  font-weight: bold;
+}

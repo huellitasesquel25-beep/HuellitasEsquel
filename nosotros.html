@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Huellitas | Acerca de Nosotros</title>
+  <meta name="description" content="Tienda de accesorios para gatos: rascadores, collares, camas, juguetes y más. Envíos en todo el país." />
+
+  <!-- ================================
+       FUENTES
+  ================================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- ================================
+       ICONO
+  ================================= -->
+  <link rel="icon" type="image/png" href="imagenes/png/icono.png" />
+
+  <!-- ================================
+       CSS
+  ================================= -->
+  <link rel="stylesheet" href="css/estilo.css" />
+  <link rel="stylesheet" href="css/medias.css" />
+
+  <!-- ================================
+       FONT AWESOME
+  ================================= -->
+  <script src="https://kit.fontawesome.com/440bac5161.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+  <!-- ================================
+       HEADER
+  ================================= -->
+  <header>
+    <div class="contenedor barra-nav">
+      <!-- Logo -->
+      <a class="marca" href="index.html" aria-label="Ir al inicio">
+        <span class="logo" aria-hidden="true">
+          <img src="imagenes/assesst/huellitas.png" alt="Logo Huellitas" />
+        </span>
+        <span>Huellitas</span>
+      </a>
+
+      <!-- Botón hamburguesa -->
+      <input type="checkbox" id="menu-toggle" aria-label="Abrir menú" />
+      <label for="menu-toggle" class="hamburguesa abrir" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+
+      <!-- Menú principal -->
+      <nav aria-label="Navegación principal">
+        <ul>
+          <li class="submenu">
+            <a href="#">Productos ▾</a>
+            <ul class="dropdown">
+              <li><a href="indumentaria.html">Indumentaria</a></li>
+              <!--
+              <li><a href="mantas">Mantas</a></li>
+              -->
+              <li><a href="accesorios.html">Accesorios para Gatos</a></li>
+            </ul>
+          </li>
+          <li><a href="nosotros.html" class="activo">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================================
+       SECCIÓN NOSOTROS
+  ================================= -->
+  <section id="nosotros" class="seccion">
+    <div class="contenedor seccion-cuadricula">
+      <div>
+        <h1>Acerca de Nosotros</h1>
+        <p>
+          En <strong>Huellitas</strong> creemos que las personas y sus gatos forman una familia.  
+          Por eso, diseñamos <em>indumentaria única para vos</em> y <em>accesorios prácticos para tu gato</em>, 
+          con estilo, calidad y amor.  
+        </p>
+        <p>
+          Nuestra misión es unir moda y funcionalidad, creando un espacio donde vos y tu mascota puedan compartir experiencias,
+          productos y momentos especiales.
+        </p>
+      </div>
+
+      <div class="seccion_arte">
+        <div class="seccion_gato">
+          <img src="imagenes/foto01.jpg" alt="Equipo Huellitas" />
+        </div>
+      </div>
+    </div>
+  
+
+  <!-- ================================
+       VALORES
+  ================================= -->
+  
+    <div class="contenedor">
+      <h2>Nuestros Valores</h2>
+      <div class="cuadricula col-3">
+        <div class="tarjeta">
+          <h3>Compromiso</h3>
+          <img src="imagenes/assesst/compromiso.jpg" alt="" />
+          <p>Trabajamos cada día para ofrecerte productos de calidad pensados en vos y tu gato.</p>
+        </div>
+        <div class="tarjeta">
+          <h3>Innovación</h3>
+          <img src="imagenes/assesst/innovacion.jpg" alt="" />
+          <p>Diseñamos artículos únicos que combinan estilo, comodidad y practicidad.</p>
+        </div>
+        <div class="tarjeta">
+          <h3>Amor por los gatitos</h3>
+          <img src="imagenes/assesst/amor_por_los_gatos.jpg" alt="" />
+          <p>Cada producto refleja nuestro cariño por los gatos y el vínculo especial que compartimos con ellos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================
+       FOOTER
+  ================================= -->
+  <footer>
+    <div class="contenedor">
+      <div class="pie-cuadricula">
+        <!-- Logo + descripción -->
+        <div>
+          <div class="marca" style="margin-bottom:.5rem;">
+            <span class="logo" aria-hidden="true">
+              <img src="imagenes/assesst/huellitas.png" alt="Logo Huellitas" />
+            </span>
+            <span>Huellitas</span>
+          </div>
+          <p>Indumentaria, ropa y también accesorios, mantitas para gatos.</p>
+        </div>
+
+        <!-- Secciones -->
+        <div>
+          <h4>Secciones</h4>
+          <ul>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Ayuda -->
+        <div class="pagos">
+          <h4>Medios de pago</h4>
+          <ul>
+            <li><a href="#">Transferencia <i class="fa-solid fa-money-bill-transfer"></i></a></li>
+            <li><a href="#">QR <i class="fa-solid fa-qrcode"></i></a></li>
+          </ul>
+        </div>
+
+        <!-- Redes sociales -->
+        <div class="social">
+          <h4>Redes</h4>
+          <ul>
+            <li><a href="#ventana-facebook"><i class="fa-brands fa-square-facebook"></i></a></li>
+            <li><a href="#ventana-instagram"><i class="fa-brands fa-square-instagram"></i></a></li>
+            <li><a href="#ventana-whatsapp"><i class="fa-brands fa-square-whatsapp"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Créditos -->
+      <p class="credito">
+        © <span id="y">2025 -</span>
+        <img src="imagenes/assesst/huellitas.png" alt="Logo Huellitas pequeño" />
+        Huellitas | Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

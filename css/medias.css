@@ -1,0 +1,338 @@
+/* =======================================================
+   ========== MEDIAS RESPONSIVE ORGANIZADO ===============
+   ======================================================= */
+
+/* ====== Desktop grande (≥ 1200px) ====== */
+@media screen and (min-width: 1200px) {
+  nav ul {
+    gap: 2rem;
+  }
+}
+
+/* ====== Desktop (1025px a 1199px) ====== */
+@media screen and (min-width: 1025px) and (max-width: 1199px) {
+  .barra-nav {
+    gap: 3rem;
+  }
+  nav ul {
+    gap: 1.5rem;
+    font-size: 1.1rem;
+  }
+  .seccion-cuadricula,
+  .col-3,
+  .pie-cuadricula {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ====== Tablets (768px a 1024px) ====== */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .barra-nav {
+    gap: 2rem;
+  }
+  nav ul {
+    gap: 1rem;
+  }
+  .seccion-cuadricula {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .col-3,
+  .pie-cuadricula {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ====== Tablets retrato (768px – 1024px) ====== */
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  h1 {
+    font-size: 2.25rem;
+  }
+  .formulario-contacto {
+    max-width: 600px;
+    padding: 1.5rem;
+  }
+  .col-3,
+  .pie-cuadricula {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ====== Tablets landscape (768px – 1024px) ====== */
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  .barra-nav {
+    gap: 3rem;
+  }
+  nav ul {
+    font-size: 1.3rem;
+    gap: 2rem;
+  }
+  .seccion-cuadricula,
+  .col-3,
+  .pie-cuadricula {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .formulario-contacto {
+    max-width: 700px;
+    padding: 2rem;
+  }
+}
+
+/* ====== Celulares (≤ 767px) ====== */
+@media screen and (max-width: 767px) {
+  /* Header */
+  .barra-nav {
+    grid-template-columns: auto auto;
+    gap: 1rem;
+  }
+  .hamburguesa {
+    display: flex;
+    position: relative;
+    z-index: 1001;
+    transition: transform 0.3s ease;
+  }
+  .hamburguesa span {
+    height: 3px;
+    width: 100%;
+    background: var(--texto);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background: var(--header-menu);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: left 0.4s ease;
+    z-index: 1000;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  #menu-toggle:checked ~ nav {
+    left: 0;
+  }
+  #menu-toggle:checked + .hamburguesa span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+  }
+  #menu-toggle:checked + .hamburguesa span:nth-child(2) {
+    opacity: 0;
+  }
+  #menu-toggle:checked + .hamburguesa span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  /* Grillas */
+  .seccion-cuadricula {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .col-3,
+  .col-2,
+  .pie-cuadricula {
+    grid-template-columns: 1fr;
+  }
+
+  /* Submenú */
+  .submenu .dropdown {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    flex-direction: column;
+    margin-top: 1.5rem;
+    position: static;
+    background: var(--sub-menu);
+    border-radius: .5rem;
+    box-shadow: var(--sombra);
+    border: 1px solid rgba(255, 255, 255, 0.342);
+    gap: 1rem;
+    transition: all 0.8s ease;
+  }
+  .submenu:hover .dropdown,
+  .submenu:focus-within .dropdown {
+    max-height: 500px;
+    opacity: 1;
+  }
+}
+
+/* ====== Modal CELULARES (≤ 600px) ====== */
+@media (max-width: 600px) {
+  .modal-contenido {
+    width: 95%;
+    max-width: 450px;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 1rem 1.25rem;
+    border-radius: 0.75rem;
+  }
+  .modal-detalle {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .modal-detalle img {
+    max-width: 90%;
+    height: auto;
+  }
+  .opciones {
+    width: 100%;
+    gap: 1rem;
+  }
+  .modal-contenido .cerrar {
+    top: 0.45rem;
+    left: 90%;
+    right: auto;
+    font-size: 2.2rem;
+    padding: .15rem .4rem;
+    border-radius: .5rem;
+  }
+}
+
+/* ====== Modal TABLETS (601px – 1024px) ====== */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .modal-contenido {
+    max-width: 700px;
+    padding: 1.5rem;
+  }
+  .modal-detalle {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  .modal-detalle img {
+    max-width: 250px;
+  }
+  .modal-contenido .cerrar {
+    top: 0.9rem;
+    right: 1rem;
+    font-size: 2rem;
+  }
+}
+
+/* ====== Modal Desktop (≥ 1025px) ====== */
+@media (min-width: 1025px) {
+  .modal-contenido .cerrar {
+    top: 1rem;
+    right: 1.25rem;
+    font-size: 2.1rem;
+  }
+}
+
+/* ====== LANDSCAPE celulares (≤ 900px) ====== */
+@media (max-width: 900px) and (orientation: landscape) {
+  .modal-contenido {
+    max-width: 90%;
+    padding: 1rem;
+  }
+  .modal-detalle {
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+  }
+  .modal-detalle img {
+    max-width: 40%;
+  }
+  .opciones {
+    width: 60%;
+  }
+}
+
+/* ====== Celulares landscape (480px – 767px) ====== */
+@media screen and (min-width: 480px) and (max-width: 767px) and (orientation: landscape) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  .hamburguesa {
+    width: 28px;
+    height: 24px;
+  }
+  nav {
+    align-items: flex-start;
+    padding-top: 5rem;
+  }
+  nav ul {
+    flex-direction: row;
+    font-size: 1.1rem;
+    gap: 1rem;
+  }
+  .seccion-cuadricula,
+  .col-3,
+  .pie-cuadricula {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .formulario-contacto {
+    max-width: 480px;
+    padding: 1rem;
+  }
+}
+
+/* ====== Celulares muy pequeños (≤ 480px) ====== */
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.25rem;
+  }
+  nav ul {
+    font-size: 1.2rem;
+    gap: 1.25rem;
+  }
+  .formulario-contacto {
+    padding: 1.25rem;
+  }
+  .formulario-contacto input,
+  .formulario-contacto textarea {
+    font-size: .9rem;
+  }
+  .info-contacto li {
+    font-size: 1rem;
+  }
+}
+
+/* ====== Celulares muy pequeños landscape (≤ 480px) ====== */
+@media screen and (max-width: 480px) and (orientation: landscape) {
+  nav {
+    padding-top: 4rem;
+  }
+  nav ul {
+    gap: 1rem;
+    font-size: 1rem;
+  }
+  .seccion-cuadricula,
+  .col-3,
+  .pie-cuadricula {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}
+
+/* ====== Celulares extra pequeños (≤ 360px) ====== */
+@media screen and (max-width: 360px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+  nav ul {
+    font-size: 1rem;
+    gap: 1rem;
+  }
+  .formulario-contacto {
+    padding: 1rem;
+  }
+  .info-contacto li {
+    font-size: 0.9rem;
+  }
+}
