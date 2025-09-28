@@ -2,7 +2,7 @@
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Tus datos
-    $destino = "mdkjoel@hotmail.com"; // <-- reemplazar por correo real
+    $destino = "huellitas.esquel25@gmail.com"; // <-- reemplazar por correo real
     $asunto = "Nuevo mensaje desde Huellitas";
 
     // Datos del formulario
