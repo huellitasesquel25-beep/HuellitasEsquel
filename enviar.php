@@ -1,37 +1,37 @@
 <?php
-if($_SERVER["REQUEST_METHOD"] == "POST") {
+// Verificamos que se haya enviado el formulario
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Sanitizamos los campos
+    $nombre  = htmlspecialchars(trim($_POST["nombre"]));
+    $email   = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+    $mensaje = htmlspecialchars(trim($_POST["mensaje"]));
 
-    // Tus datos
-    $destino = "huellitas.esquel25@gmail.com"; // <-- reemplazar por correo real
-    $asunto = "Nuevo mensaje desde Huellitas";
-
-    // Datos del formulario
-    $nombre = strip_tags(trim($_POST["nombre"]));
-    $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
-    $mensaje = trim($_POST["mensaje"]);
-
-    // Validar campos
-    if (empty($nombre) || empty($mensaje) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "Por favor completá todos los campos correctamente.";
+    // Validamos email
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "El correo no es válido.";
         exit;
     }
 
-    // Cuerpo del mensaje
-    $cuerpo = "Nombre: $nombre\n";
+    // Configuración
+    $destinatario = "huellitas.esquel25@gmail.com"; // 👈 poné acá tu correo real
+    $asunto = "Nuevo mensaje desde Huellitas";
+
+    // Armamos el contenido
+    $cuerpo  = "Nombre: $nombre\n";
     $cuerpo .= "Correo: $email\n\n";
     $cuerpo .= "Mensaje:\n$mensaje\n";
 
-    // Encabezados
-    $headers = "From: $email\r\n";
+    // Cabeceras
+    $headers  = "From: Huellitas <no-reply@tudominio.com>\r\n";
     $headers .= "Reply-To: $email\r\n";
+    $headers .= "X-Mailer: PHP/" . phpversion();
 
-    // Enviar correo
-    if(mail($destino, $asunto, $cuerpo, $headers)) {
-        echo "¡Mensaje enviado correctamente!";
+    // Envío
+    if (mail($destinatario, $asunto, $cuerpo, $headers)) {
+        echo "¡Gracias $nombre! Tu mensaje fue enviado correctamente.";
     } else {
-        echo "Error al enviar el mensaje. Intentá de nuevo.";
+        echo "Lo sentimos, hubo un error al enviar el mensaje. Intentalo más tarde.";
     }
-
 } else {
     echo "Acceso no permitido.";
 }
