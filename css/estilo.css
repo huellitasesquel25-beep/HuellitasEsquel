@@ -354,63 +354,11 @@ nav a:hover::after {
 /* =======================================================
    ========= FORMULARIO DE CONTACTO ======================
    ======================================================= */
-.formulario-contacto {
-  display: grid;
-  gap: 1.25rem;
-  margin: 2rem auto 0; /* auto para centrarlo */
-  background: var(--contacto);
-  padding: 2rem;
-  border-radius: var(--radio);
-  box-shadow: var(--sombra);
-
-  max-width: 800px; /* 👈 ancho máximo */
-  width: 100%;      /* se adapta en móviles */
-}
-
-.formulario-contacto .campo {
-  display: flex;
-  flex-direction: column;
-  gap: .5rem;
-}
-
-.formulario-contacto label {
-  font-weight: 500;
-}
-
-.formulario-contacto input,
-.formulario-contacto textarea {
-  padding: .75rem 1rem;
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: .5rem;
-  background: rgba(255,255,255,0.08);
-  color: var(--texto);
-  font-size: 1rem;
-}
-
-.formulario-contacto input:focus,
-.formulario-contacto textarea:focus {
-  outline: none;
-  border-color: var(--marca);
-  box-shadow: 0 0 5px var(--marca);
-}
-
-.formulario-contacto .boton {
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-  border: 1px solid transparent;
-}
-
-.formulario-contacto .boton:hover {
-  opacity: 1;
-  box-shadow: 0 0 20px var(--sombra-boton);
-  text-shadow: 0 0 5px var(--sombra-boton-2);
-  border: 1px solid rgba(68, 130, 255, 0.85);
-}
-
 .info-contacto {
   margin-top: 3rem;
+  background: var(--contacto);
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .info-contacto h2 {
