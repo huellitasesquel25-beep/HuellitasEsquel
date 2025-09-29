@@ -715,3 +715,79 @@ footer ul {
   font-weight: bold;
   color: var(--marca);
 }
+
+/* ===================== CONTROLES SLIDERS ===================== */
+.slider .controles {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none; /* permite que solo los labels reciban click */
+}
+
+.slider .controles label {
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  font-size: 2rem;
+  padding: .5rem 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: auto; /* habilita click en labels */
+  transition: background 0.3s;
+}
+
+.slider .controles label:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+/* Flechas de navegación */
+.flechas label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem;
+  background: rgba(0,0,0,0.4);
+  border-radius: 50%;
+  user-select: none;
+  transition: background .3s;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.flechas label:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+.flechas .prev { left: 10px; }
+.flechas .next { right: 10px; }
+
+/* Mostrar solo la flecha correspondiente según imagen activa */
+#s1-1:checked ~ .flechas label[for="s1-3"],
+#s1-1:checked ~ .flechas label[for="s1-2"],
+#s1-2:checked ~ .flechas label[for="s1-1"],
+#s1-2:checked ~ .flechas label[for="s1-3"],
+#s1-3:checked ~ .flechas label[for="s1-2"],
+#s1-3:checked ~ .flechas label[for="s1-1"],
+
+#s2-1:checked ~ .flechas label[for="s2-3"],
+#s2-1:checked ~ .flechas label[for="s2-2"],
+#s2-2:checked ~ .flechas label[for="s2-1"],
+#s2-2:checked ~ .flechas label[for="s2-3"],
+#s2-3:checked ~ .flechas label[for="s2-2"],
+#s2-3:checked ~ .flechas label[for="s2-1"],
+
+#s3-1:checked ~ .flechas label[for="s3-3"],
+#s3-1:checked ~ .flechas label[for="s3-2"],
+#s3-2:checked ~ .flechas label[for="s3-1"],
+#s3-2:checked ~ .flechas label[for="s3-3"],
+#s3-3:checked ~ .flechas label[for="s3-2"],
+#s3-3:checked ~ .flechas label[for="s3-1"] {
+  opacity: 1;
+  pointer-events: auto;
+}
