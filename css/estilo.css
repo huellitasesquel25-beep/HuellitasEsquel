@@ -351,6 +351,23 @@ nav a:hover::after {
   background: rgba(255,255,255,.12);
 }
 
+.boton-general {
+  text-align: center;
+  margin-top: 0.5rem;
+  background: rgba(43, 53, 75, 0.85);
+  color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.boton-general:hover { 
+  opacity: 1;
+  background: rgba(51, 63, 87, 0.85);
+  box-shadow: 0 0 20px var(--sombra-boton);
+  text-shadow: 0 0 5px var(--sombra-boton-2);
+  border: 1px solid rgba(68, 130, 255, 0.85);
+}
+
 /* =======================================================
    ========= FORMULARIO DE CONTACTO ======================
    ======================================================= */
