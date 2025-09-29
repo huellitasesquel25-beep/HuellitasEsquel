@@ -608,3 +608,110 @@ footer ul {
   color: #000;
   font-weight: bold;
 }
+
+/* ===================== SLIDER GENERAL ===================== */
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: var(--sombra);
+}
+
+.slider input {
+  display: none;
+}
+
+.slides {
+  display: flex;
+  width: 300%;
+  transition: transform 0.6s ease;
+}
+
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.slide img {
+  width: 100%;
+  display: block;
+  border-radius: 1rem;
+}
+
+/* Navegación (puntos) */
+.navegacion {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+}
+
+.navegacion label {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.7);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.navegacion label:hover {
+  background: var(--marca);
+}
+
+/* ===================== SLIDER 1 ===================== */
+#s1-1:checked ~ .slides { transform: translateX(0%); }
+#s1-2:checked ~ .slides { transform: translateX(-100%); }
+#s1-3:checked ~ .slides { transform: translateX(-200%); }
+
+/* ===================== SLIDER 2 ===================== */
+#s2-1:checked ~ .slides { transform: translateX(0%); }
+#s2-2:checked ~ .slides { transform: translateX(-100%); }
+#s2-3:checked ~ .slides { transform: translateX(-200%); }
+
+/* ===================== SLIDER 3 ===================== */
+#s3-1:checked ~ .slides { transform: translateX(0%); }
+#s3-2:checked ~ .slides { transform: translateX(-100%); }
+#s3-3:checked ~ .slides { transform: translateX(-200%); }
+
+/* ===================== SLIDER 4 ===================== */
+#s4-1:checked ~ .slides { transform: translateX(0%); }
+#s4-2:checked ~ .slides { transform: translateX(-100%); }
+#s4-3:checked ~ .slides { transform: translateX(-200%); }
+
+/* ===================== SLIDER 5 ===================== */
+#s5-1:checked ~ .slides { transform: translateX(0%); }
+#s5-2:checked ~ .slides { transform: translateX(-100%); }
+#s5-3:checked ~ .slides { transform: translateX(-200%); }
+
+/* ===================== SLIDER 6 ===================== */
+#s6-1:checked ~ .slides { transform: translateX(0%); }
+#s6-2:checked ~ .slides { transform: translateX(-100%); }
+#s6-3:checked ~ .slides { transform: translateX(-200%); }
+
+
+/* ===================== DESCRIPCIÓN PRODUCTO ===================== */
+.descripcion-producto {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: .5rem;
+  text-align: center;
+}
+
+.descripcion-producto p {
+  margin: .5rem 0;
+  color: var(--texto);
+  font-size: 1rem;
+}
+
+.descripcion-producto .precio {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--marca);
+}

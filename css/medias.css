@@ -198,6 +198,15 @@
     padding: .15rem .4rem;
     border-radius: .5rem;
   }
+  .slider { 
+    max-width: 280px; 
+  } 
+  .slide img { 
+    border-radius: .5rem; 
+  } 
+  .navegacion label { 
+    width: 10px; height: 10px; 
+  }
 }
 
 /* ====== Modal TABLETS (601px – 1024px) ====== */
@@ -219,6 +228,12 @@
     right: 1rem;
     font-size: 2rem;
   }
+  .slider { 
+    max-width: 350px; 
+  } 
+  .navegacion label { 
+    width: 12px; height: 12px; 
+  }
 }
 
 /* ====== Modal Desktop (≥ 1025px) ====== */
@@ -227,6 +242,9 @@
     top: 1rem;
     right: 1.25rem;
     font-size: 2.1rem;
+  }
+  .slider { 
+    max-width: 400px; 
   }
 }
 

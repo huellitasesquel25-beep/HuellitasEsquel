@@ -141,15 +141,31 @@
      MODALES DE CADA PRODUCTO
 ================================= -->
 
-<!-- Modal producto 1 -->
+<!-- ========== MODAL 1: Par de medias ========== -->
 <div id="modal1" class="modal">
   <div class="modal-contenido">
     <a href="#" class="cerrar">&times;</a>
-      <h2>Par de medias</h2>
-
+    <h2>Par de medias</h2>
     <div class="modal-detalle">
-      <img src="imagenes/galeria/Indumentaria/Par_de_medias.jpg" alt="" />
 
+      <!-- Slider -->
+      <div class="slider">
+        <input type="radio" name="slider1" id="s1-1" checked>
+        <input type="radio" name="slider1" id="s1-2">
+        <input type="radio" name="slider1" id="s1-3">
+        <div class="slides">
+          <div class="slide"><img src="imagenes/galeria/Indumentaria/Par_de_medias.jpg"></div>
+          <div class="slide"><img src="imagenes/galeria/Indumentaria/Par_de_medias_2.jpg"></div>
+          <div class="slide"><img src="imagenes/galeria/Indumentaria/Par_de_medias_3.jpg"></div>
+        </div>
+        <div class="navegacion">
+          <label for="s1-1"></label>
+          <label for="s1-2"></label>
+          <label for="s1-3"></label>
+        </div>
+      </div>
+
+      <!-- Opciones -->
       <div class="opciones">
         <div class="opcion">
           <h3>Colores disponibles</h3>
@@ -158,9 +174,8 @@
             <label><input type="radio" name="color1" value="blanco"><span>Blanco</span></label>
           </div>
         </div>
-
         <div class="opcion">
-        <h3>Talles disponibles</h3>
+          <h3>Talles disponibles</h3>
           <div class="talles">
             <label><input type="radio" name="talle1" value="s"><span>S - Cant. Disp.: 2</span></label>
             <label><input type="radio" name="talle1" value="m"><span>M - Cant. Disp.: 1</span></label>
@@ -168,139 +183,276 @@
             <label><input type="radio" name="talle1" value="xl"><span>XL - Cant. Disp.: 1</span></label>
           </div>
         </div>
+
+        <!-- Descripción + precio --> 
+        <div class="descripcion-producto"> 
+          <p>Precio.</p> 
+          <p class="precio">$2.500</p> 
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Modal producto 2 -->
+<!-- ========== MODAL 2: Buzo Rustico ========== -->
 <div id="modal2" class="modal">
   <div class="modal-contenido">
     <a href="#" class="cerrar">&times;</a>
-      <h2>Buzo Rustico</h2>
-
+    <h2>Buzo Rustico</h2>
     <div class="modal-detalle">
-      <img src="imagenes/galeria/Indumentaria/Buzo_Rustico.jpg" alt="" />
 
+      <!-- Slider -->
+      <div class="slider">
+        <input type="radio" name="slider2" id="s2-1" checked>
+        <input type="radio" name="slider2" id="s2-2">
+        <input type="radio" name="slider2" id="s2-3">
+        <div class="slides">
+          <div class="slide"><img src="imagenes/galeria/Indumentaria/Buzo_Rustico.jpg"></div>
+          <div class="slide"><img src="imagenes/galeria/Indumentaria/Buzo_Rustico_2.jpg"></div>
+          <div class="slide"><img src="imagenes/galeria/Indumentaria/Buzo_Rustico_3.jpg"></div>
+        </div>
+        <div class="navegacion">
+          <label for="s2-1"></label>
+          <label for="s2-2"></label>
+          <label for="s2-3"></label>
+        </div>
+      </div>
+
+      <!-- Opciones -->
       <div class="opciones">
         <div class="opcion">
           <h3>Colores disponibles</h3>
           <div class="colores">
-            <label><input type="radio" name="color1" value="negro"><span>Negro</span></label>
-            <label><input type="radio" name="color1" value="blanco"><span>Blanco</span></label>
+            <label><input type="radio" name="color2" value="azul"><span>Azul</span></label>
+            <label><input type="radio" name="color2" value="rojo"><span>Rojo</span></label>
           </div>
         </div>
-
         <div class="opcion">
-        <h3>Talles disponibles</h3>
+          <h3>Talles disponibles</h3>
           <div class="talles">
-            <label><input type="radio" name="talle1" value="s"><span>S - Cant. Disp.: 2</span></label>
-            <label><input type="radio" name="talle1" value="m"><span>M - Cant. Disp.: 1</span></label>
-            <label><input type="radio" name="talle1" value="l"><span>L - Cant. Disp.: 0</span></label>
-            <label><input type="radio" name="talle1" value="xl"><span>XL - Cant. Disp.: 1</span></label>
+            <label><input type="radio" name="talle2" value="s"><span>S</span></label>
+            <label><input type="radio" name="talle2" value="m"><span>M</span></label>
+            <label><input type="radio" name="talle2" value="l"><span>L</span></label>
           </div>
+        </div>
+        
+        <!-- Descripción + precio --> 
+        <div class="descripcion-producto"> 
+          <p>PRECIO.</p>
+          <p class="precio">$2.500</p>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Modal producto 3 -->
+<!-- ========== MODAL 3: Remera Unisex ========== -->
 <div id="modal3" class="modal">
   <div class="modal-contenido">
     <a href="#" class="cerrar">&times;</a>
-      <h2>Remeras Unisex</h2>
-
+    <h2>Remera Unisex</h2>
     <div class="modal-detalle">
-      <img src="imagenes/galeria/Indumentaria/Remera_unisex.jpg" alt="" />
 
+      <!-- Slider -->
+      <div class="slider">
+        <input type="radio" name="slider3" id="s3-1" checked>
+        <input type="radio" name="slider3" id="s3-2">
+        <input type="radio" name="slider3" id="s3-3">
+        <div class="slides">
+          <div class="slide"><img src="imagenes/galeria/Indumentaria/Remera_unisex.jpg"></div>
+          <div class="slide"><img src="imagenes/galeria/Indumentaria/Remera_unisex_2.jpg"></div>
+          <div class="slide"><img src="imagenes/galeria/Indumentaria/Remera_unisex_3.jpg"></div>
+        </div>
+        <div class="navegacion">
+          <label for="s3-1"></label>
+          <label for="s3-2"></label>
+          <label for="s3-3"></label>
+        </div>
+      </div>
+
+      <!-- Opciones -->
       <div class="opciones">
         <div class="opcion">
           <h3>Colores disponibles</h3>
           <div class="colores">
-            <label><input type="radio" name="color1" value="negro"><span>Negro</span></label>
-            <label><input type="radio" name="color1" value="blanco"><span>Blanco</span></label>
+            <label><input type="radio" name="color2" value="azul"><span>Azul</span></label>
+            <label><input type="radio" name="color2" value="rojo"><span>Rojo</span></label>
           </div>
         </div>
-
         <div class="opcion">
-        <h3>Talles disponibles</h3>
+          <h3>Talles disponibles</h3>
           <div class="talles">
-            <label><input type="radio" name="talle1" value="s"><span>S - Cant. Disp.: 2</span></label>
-            <label><input type="radio" name="talle1" value="m"><span>M - Cant. Disp.: 1</span></label>
-            <label><input type="radio" name="talle1" value="l"><span>L - Cant. Disp.: 0</span></label>
-            <label><input type="radio" name="talle1" value="xl"><span>XL - Cant. Disp.: 1</span></label>
+            <label><input type="radio" name="talle2" value="s"><span>S</span></label>
+            <label><input type="radio" name="talle2" value="m"><span>M</span></label>
+            <label><input type="radio" name="talle2" value="l"><span>L</span></label>
           </div>
+        </div>
+        
+        <!-- Descripción + precio --> 
+        <div class="descripcion-producto"> 
+          <p>PRECIO.</p>
+          <p class="precio">$2.500</p> 
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Modal producto 4 -->
+<!-- ========== MODAL 4: Riñonera ========== -->
 <div id="modal4" class="modal">
   <div class="modal-contenido">
     <a href="#" class="cerrar">&times;</a>
-      <h2>Riñonera</h2>
-
+    <h2>Riñonera</h2>
     <div class="modal-detalle">
-      <img src="imagenes/galeria/Indumentaria/Riñonera.jpg" alt="" />
 
+      <!-- Slider -->
+      <div class="slider">
+        <input type="radio" name="slider3" id="s4-1" checked>
+        <input type="radio" name="slider3" id="s4-2">
+        <input type="radio" name="slider3" id="s4-3">
+        <div class="slides">
+          <div class="slide"><img src="imagenes/galeria/Indumentaria/Riñonera.jpg"></div>
+          <div class="slide"><img src="imagenes/galeria/Indumentaria/Riñonera_2.jpg"></div>
+          <div class="slide"><img src="imagenes/galeria/Indumentaria/Riñonera_3.jpg"></div>
+        </div>
+        <div class="navegacion">
+          <label for="s4-1"></label>
+          <label for="s4-2"></label>
+          <label for="s4-3"></label>
+        </div>
+      </div>
+
+      <!-- Opciones -->
       <div class="opciones">
         <div class="opcion">
           <h3>Colores disponibles</h3>
           <div class="colores">
-            <label><input type="radio" name="color1" value="negro"><span>Negro</span></label>
-            <label><input type="radio" name="color1" value="blanco"><span>Blanco</span></label>
+            <label><input type="radio" name="color2" value="azul"><span>Azul</span></label>
+            <label><input type="radio" name="color2" value="rojo"><span>Rojo</span></label>
           </div>
         </div>
-
         <div class="opcion">
-        <h3>Talles disponibles</h3>
+          <h3>Talles disponibles</h3>
           <div class="talles">
-            <label><input type="radio" name="talle1" value="s"><span>S - Cant. Disp.: 2</span></label>
-            <label><input type="radio" name="talle1" value="m"><span>M - Cant. Disp.: 1</span></label>
-            <label><input type="radio" name="talle1" value="l"><span>L - Cant. Disp.: 0</span></label>
-            <label><input type="radio" name="talle1" value="xl"><span>XL - Cant. Disp.: 1</span></label>
+            <label><input type="radio" name="talle2" value="s"><span>S</span></label>
+            <label><input type="radio" name="talle2" value="m"><span>M</span></label>
+            <label><input type="radio" name="talle2" value="l"><span>L</span></label>
           </div>
+        </div>
+        
+        <!-- Descripción + precio --> 
+        <div class="descripcion-producto"> 
+          <p>PRECIO.</p>
+          <p class="precio">$2.500</p> 
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Modal producto 5 -->
+<!-- ========== MODAL 5: Manta Individual ========== -->
 <div id="modal5" class="modal">
   <div class="modal-contenido">
     <a href="#" class="cerrar">&times;</a>
-      <h2>Mantas Individuales</h2>
-
+    <h2>Manta Individual</h2>
     <div class="modal-detalle">
-      <img src="imagenes/galeria/Indumentaria/Manta_Individual.jpg" alt="" />
 
+      <!-- Slider -->
+      <div class="slider">
+        <input type="radio" name="slider3" id="s5-1" checked>
+        <input type="radio" name="slider3" id="s5-2">
+        <input type="radio" name="slider3" id="s5-3">
+        <div class="slides">
+          <div class="slide"><img src="imagenes/galeria/Indumentaria/Manta_Individual.jpg"></div>
+          <div class="slide"><img src="imagenes/galeria/Indumentaria/Manta_Individual_2.jpg"></div>
+          <div class="slide"><img src="imagenes/galeria/Indumentaria/Manta_Individual_3.jpg"></div>
+        </div>
+        <div class="navegacion">
+          <label for="s5-1"></label>
+          <label for="s5-2"></label>
+          <label for="s5-3"></label>
+        </div>
+      </div>
+
+      <!-- Opciones -->
       <div class="opciones">
         <div class="opcion">
           <h3>Colores disponibles</h3>
           <div class="colores">
-            <label><input type="radio" name="color1" value="negro"><span>Negro</span></label>
-            <label><input type="radio" name="color1" value="blanco"><span>Blanco</span></label>
+            <label><input type="radio" name="color2" value="azul"><span>Azul</span></label>
+            <label><input type="radio" name="color2" value="rojo"><span>Rojo</span></label>
           </div>
         </div>
-
         <div class="opcion">
-        <h3>Talles disponibles</h3>
+          <h3>Talles disponibles</h3>
           <div class="talles">
-            <label><input type="radio" name="talle1" value="s"><span>S - Cant. Disp.: 2</span></label>
-            <label><input type="radio" name="talle1" value="m"><span>M - Cant. Disp.: 1</span></label>
-            <label><input type="radio" name="talle1" value="l"><span>L - Cant. Disp.: 0</span></label>
-            <label><input type="radio" name="talle1" value="xl"><span>XL - Cant. Disp.: 1</span></label>
+            <label><input type="radio" name="talle2" value="s"><span>S</span></label>
+            <label><input type="radio" name="talle2" value="m"><span>M</span></label>
+            <label><input type="radio" name="talle2" value="l"><span>L</span></label>
           </div>
+        </div>
+        
+        <!-- Descripción + precio --> 
+        <div class="descripcion-producto"> 
+          <p>PRECIO.</p> 
+          <p class="precio">$2.500</p> 
         </div>
       </div>
     </div>
   </div>
 </div>
-  
+
+<!-- ========== MODAL 6: XXXXXXXXX ========== -->
+<div id="modal6" class="modal">
+  <div class="modal-contenido">
+    <a href="#" class="cerrar">&times;</a>
+    <h2>xxxxxxxxx</h2>
+    <div class="modal-detalle">
+
+      <!-- Slider -->
+      <div class="slider">
+        <input type="radio" name="slider3" id="s6-1" checked>
+        <input type="radio" name="slider3" id="s6-2">
+        <input type="radio" name="slider3" id="s6-3">
+        <div class="slides">
+          <div class="slide"><img src="imagenes/galeria/Indumentaria/"></div>
+          <div class="slide"><img src="imagenes/galeria/Indumentaria/"></div>
+          <div class="slide"><img src="imagenes/galeria/Indumentaria/"></div>
+        </div>
+        <div class="navegacion">
+          <label for="s6-1"></label>
+          <label for="s6-2"></label>
+          <label for="s6-3"></label>
+        </div>
+      </div>
+
+      <!-- Opciones -->
+      <div class="opciones">
+        <div class="opcion">
+          <h3>Colores disponibles</h3>
+          <div class="colores">
+            <label><input type="radio" name="color2" value="azul"><span>Azul</span></label>
+            <label><input type="radio" name="color2" value="rojo"><span>Rojo</span></label>
+          </div>
+        </div>
+        <div class="opcion">
+          <h3>Talles disponibles</h3>
+          <div class="talles">
+            <label><input type="radio" name="talle2" value="s"><span>S</span></label>
+            <label><input type="radio" name="talle2" value="m"><span>M</span></label>
+            <label><input type="radio" name="talle2" value="l"><span>L</span></label>
+          </div>
+        </div>
+        
+        <!-- Descripción + precio --> 
+        <div class="descripcion-producto"> 
+          <p>Precio.</p>
+          <p class="precio">$2.500</p> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- ================================
        FOOTER
