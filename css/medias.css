@@ -248,6 +248,56 @@
   }
 }
 
+/* =======================================================
+   =================== RESPONSIVE ========================
+   ======================================================= */
+
+/* ====== Tablets ====== */
+@media (max-width: 900px) {
+  .modal-contenido {
+    max-width: 90%;
+  }
+  .slider {
+    max-width: 400px;
+  }
+}
+
+
+
+/* ======== Responsive ======== */
+@media (max-width: 600px) {
+  .slide img {
+    height: 250px;
+  }
+  .flechas label {
+    font-size: 1.5rem;
+  }
+}
+
+/* ====== Celulares ====== */
+@media (max-width: 600px) {
+  .modal-contenido {
+    width: 90%;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+
+  .slider {
+    max-width: 320px;
+  }
+
+  .slider button {
+    font-size: 1.5rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .modal-cerrar {
+    top: 5px;
+    right: 10px;
+    font-size: 1.8rem;
+  }
+}
+
 /* ====== LANDSCAPE celulares (≤ 900px) ====== */
 @media (max-width: 900px) and (orientation: landscape) {
   .modal-contenido {

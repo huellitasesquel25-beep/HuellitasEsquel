@@ -609,19 +609,17 @@ footer ul {
   font-weight: bold;
 }
 
-/* ===================== SLIDER GENERAL ===================== */
+/* =========================================
+   ESTILOS GENERALES DEL SLIDER
+========================================= */
+
 .slider {
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
   margin: auto;
   overflow: hidden;
-  border-radius: 1rem;
-  box-shadow: var(--sombra);
-}
-
-.slider input {
-  display: none;
+  border-radius: 10px;
 }
 
 .slides {
@@ -638,156 +636,200 @@ footer ul {
 .slide img {
   width: 100%;
   display: block;
-  border-radius: 1rem;
+  border-radius: 10px;
 }
 
-/* Navegación (puntos) */
-.navegacion {
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: .5rem;
+/* Ocultar los radios */
+input[type="radio"] {
+  display: none;
 }
 
-.navegacion label {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.7);
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.navegacion label:hover {
-  background: var(--marca);
-}
-
-/* ===================== SLIDER 1 ===================== */
-#s1-1:checked ~ .slides { transform: translateX(0%); }
-#s1-2:checked ~ .slides { transform: translateX(-100%); }
-#s1-3:checked ~ .slides { transform: translateX(-200%); }
-
-/* ===================== SLIDER 2 ===================== */
-#s2-1:checked ~ .slides { transform: translateX(0%); }
-#s2-2:checked ~ .slides { transform: translateX(-100%); }
-#s2-3:checked ~ .slides { transform: translateX(-200%); }
-
-/* ===================== SLIDER 3 ===================== */
-#s3-1:checked ~ .slides { transform: translateX(0%); }
-#s3-2:checked ~ .slides { transform: translateX(-100%); }
-#s3-3:checked ~ .slides { transform: translateX(-200%); }
-
-/* ===================== SLIDER 4 ===================== */
-#s4-1:checked ~ .slides { transform: translateX(0%); }
-#s4-2:checked ~ .slides { transform: translateX(-100%); }
-#s4-3:checked ~ .slides { transform: translateX(-200%); }
-
-/* ===================== SLIDER 5 ===================== */
-#s5-1:checked ~ .slides { transform: translateX(0%); }
-#s5-2:checked ~ .slides { transform: translateX(-100%); }
-#s5-3:checked ~ .slides { transform: translateX(-200%); }
-
-/* ===================== SLIDER 6 ===================== */
-#s6-1:checked ~ .slides { transform: translateX(0%); }
-#s6-2:checked ~ .slides { transform: translateX(-100%); }
-#s6-3:checked ~ .slides { transform: translateX(-200%); }
-
-
-/* ===================== DESCRIPCIÓN PRODUCTO ===================== */
-.descripcion-producto {
-  margin: 1rem 0;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: .5rem;
-  text-align: center;
-}
-
-.descripcion-producto p {
-  margin: .5rem 0;
-  color: var(--texto);
-  font-size: 1rem;
-}
-
-.descripcion-producto .precio {
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: var(--marca);
-}
-
-/* ===================== CONTROLES SLIDERS ===================== */
-.slider .controles {
+/* =========================================
+   FLECHAS
+========================================= */
+.flechas {
   position: absolute;
   top: 50%;
   width: 100%;
   display: flex;
   justify-content: space-between;
   transform: translateY(-50%);
-  pointer-events: none; /* permite que solo los labels reciban click */
+  z-index: 10;
+  pointer-events: none;
 }
 
-.slider .controles label {
-  background: rgba(0,0,0,0.5);
-  color: #fff;
-  font-size: 2rem;
-  padding: .5rem 1rem;
+.flechas label {
+  pointer-events: all;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px 15px;
   border-radius: 50%;
+  font-size: 1.5rem;
   cursor: pointer;
-  pointer-events: auto; /* habilita click en labels */
   transition: background 0.3s;
 }
 
-.slider .controles label:hover {
-  background: rgba(0,0,0,0.8);
-}
-
-/* Flechas de navegación */
-.flechas label {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2.5rem;
-  color: white;
-  cursor: pointer;
-  padding: 0.5rem;
-  background: rgba(0,0,0,0.4);
-  border-radius: 50%;
-  user-select: none;
-  transition: background .3s;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 20;
-}
-
 .flechas label:hover {
-  background: rgba(0,0,0,0.7);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
-.flechas .prev { left: 10px; }
-.flechas .next { right: 10px; }
+/* Ocultar todas las flechas por defecto */
+.flechas label { display: none; }
 
-/* Mostrar solo la flecha correspondiente según imagen activa */
-#s1-1:checked ~ .flechas label[for="s1-3"],
-#s1-1:checked ~ .flechas label[for="s1-2"],
-#s1-2:checked ~ .flechas label[for="s1-1"],
-#s1-2:checked ~ .flechas label[for="s1-3"],
-#s1-3:checked ~ .flechas label[for="s1-2"],
-#s1-3:checked ~ .flechas label[for="s1-1"],
+/* =========================================
+   SLIDES VISIBLES SEGÚN RADIO ACTIVO
+========================================= */
 
-#s2-1:checked ~ .flechas label[for="s2-3"],
-#s2-1:checked ~ .flechas label[for="s2-2"],
-#s2-2:checked ~ .flechas label[for="s2-1"],
-#s2-2:checked ~ .flechas label[for="s2-3"],
-#s2-3:checked ~ .flechas label[for="s2-2"],
-#s2-3:checked ~ .flechas label[for="s2-1"],
+/* SLIDER 1 */
+#slide1-1:checked ~ .slides { transform: translateX(0); }
+#slide1-2:checked ~ .slides { transform: translateX(-100%); }
+#slide1-3:checked ~ .slides { transform: translateX(-200%); }
 
-#s3-1:checked ~ .flechas label[for="s3-3"],
-#s3-1:checked ~ .flechas label[for="s3-2"],
-#s3-2:checked ~ .flechas label[for="s3-1"],
-#s3-2:checked ~ .flechas label[for="s3-3"],
-#s3-3:checked ~ .flechas label[for="s3-2"],
-#s3-3:checked ~ .flechas label[for="s3-1"] {
-  opacity: 1;
-  pointer-events: auto;
+/* SLIDER 2 */
+#slide2-1:checked ~ .slides { transform: translateX(0); }
+#slide2-2:checked ~ .slides { transform: translateX(-100%); }
+#slide2-3:checked ~ .slides { transform: translateX(-200%); }
+
+/* SLIDER 3 */
+#slide3-1:checked ~ .slides { transform: translateX(0); }
+#slide3-2:checked ~ .slides { transform: translateX(-100%); }
+#slide3-3:checked ~ .slides { transform: translateX(-200%); }
+
+/* SLIDER 4 */
+#slide4-1:checked ~ .slides { transform: translateX(0); }
+#slide4-2:checked ~ .slides { transform: translateX(-100%); }
+#slide4-3:checked ~ .slides { transform: translateX(-200%); }
+
+/* SLIDER 5 */
+#slide5-1:checked ~ .slides { transform: translateX(0); }
+#slide5-2:checked ~ .slides { transform: translateX(-100%); }
+#slide5-3:checked ~ .slides { transform: translateX(-200%); }
+
+/* SLIDER 6 */
+#slide6-1:checked ~ .slides { transform: translateX(0); }
+#slide6-2:checked ~ .slides { transform: translateX(-100%); }
+#slide6-3:checked ~ .slides { transform: translateX(-200%); }
+
+/* =========================================
+   FLECHAS ACTIVAS POR SLIDER
+========================================= */
+
+/* SLIDER 1 */
+#slide1-1:checked ~ .flechas label:nth-child(1),
+#slide1-1:checked ~ .flechas label:nth-child(2) { display: block; }
+
+#slide1-2:checked ~ .flechas label:nth-child(3),
+#slide1-2:checked ~ .flechas label:nth-child(4) { display: block; }
+
+#slide1-3:checked ~ .flechas label:nth-child(5),
+#slide1-3:checked ~ .flechas label:nth-child(6) { display: block; }
+
+/* SLIDER 2 */
+#slide2-1:checked ~ .flechas label:nth-child(1),
+#slide2-1:checked ~ .flechas label:nth-child(2) { display: block; }
+
+#slide2-2:checked ~ .flechas label:nth-child(3),
+#slide2-2:checked ~ .flechas label:nth-child(4) { display: block; }
+
+#slide2-3:checked ~ .flechas label:nth-child(5),
+#slide2-3:checked ~ .flechas label:nth-child(6) { display: block; }
+
+/* SLIDER 3 */
+#slide3-1:checked ~ .flechas label:nth-child(1),
+#slide3-1:checked ~ .flechas label:nth-child(2) { display: block; }
+
+#slide3-2:checked ~ .flechas label:nth-child(3),
+#slide3-2:checked ~ .flechas label:nth-child(4) { display: block; }
+
+#slide3-3:checked ~ .flechas label:nth-child(5),
+#slide3-3:checked ~ .flechas label:nth-child(6) { display: block; }
+
+/* SLIDER 4 */
+#slide4-1:checked ~ .flechas label:nth-child(1),
+#slide4-1:checked ~ .flechas label:nth-child(2) { display: block; }
+
+#slide4-2:checked ~ .flechas label:nth-child(3),
+#slide4-2:checked ~ .flechas label:nth-child(4) { display: block; }
+
+#slide4-3:checked ~ .flechas label:nth-child(5),
+#slide4-3:checked ~ .flechas label:nth-child(6) { display: block; }
+
+/* SLIDER 5 */
+#slide5-1:checked ~ .flechas label:nth-child(1),
+#slide5-1:checked ~ .flechas label:nth-child(2) { display: block; }
+
+#slide5-2:checked ~ .flechas label:nth-child(3),
+#slide5-2:checked ~ .flechas label:nth-child(4) { display: block; }
+
+#slide5-3:checked ~ .flechas label:nth-child(5),
+#slide5-3:checked ~ .flechas label:nth-child(6) { display: block; }
+
+/* SLIDER 6 */
+#slide6-1:checked ~ .flechas label:nth-child(1),
+#slide6-1:checked ~ .flechas label:nth-child(2) { display: block; }
+
+#slide6-2:checked ~ .flechas label:nth-child(3),
+#slide6-2:checked ~ .flechas label:nth-child(4) { display: block; }
+
+#slide6-3:checked ~ .flechas label:nth-child(5),
+#slide6-3:checked ~ .flechas label:nth-child(6) { display: block; }
+
+/* =========================================
+   INDICADORES (RADIOS VISIBLES)
+========================================= */
+
+.nav {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  display: flex;
+  gap: 8px;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.nav label {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.nav label:hover {
+  background-color: rgba(255,255,255,0.8);
+}
+
+/* Radios activos más oscuros para que se vean sobre la imagen */
+/* SLIDER 1 */
+#slide1-1:checked ~ .nav label:nth-child(1),
+#slide1-2:checked ~ .nav label:nth-child(2),
+#slide1-3:checked ~ .nav label:nth-child(3),
+
+/* SLIDER 2 */
+#slide2-1:checked ~ .nav label:nth-child(1),
+#slide2-2:checked ~ .nav label:nth-child(2),
+#slide2-3:checked ~ .nav label:nth-child(3),
+
+/* SLIDER 3 */
+#slide3-1:checked ~ .nav label:nth-child(1),
+#slide3-2:checked ~ .nav label:nth-child(2),
+#slide3-3:checked ~ .nav label:nth-child(3),
+
+/* SLIDER 4 */
+#slide4-1:checked ~ .nav label:nth-child(1),
+#slide4-2:checked ~ .nav label:nth-child(2),
+#slide4-3:checked ~ .nav label:nth-child(3),
+
+/* SLIDER 5 */
+#slide5-1:checked ~ .nav label:nth-child(1),
+#slide5-2:checked ~ .nav label:nth-child(2),
+#slide5-3:checked ~ .nav label:nth-child(3),
+
+/* SLIDER 6 */
+#slide6-1:checked ~ .nav label:nth-child(1),
+#slide6-2:checked ~ .nav label:nth-child(2),
+#slide6-3:checked ~ .nav label:nth-child(3) {
+  background-color: rgba(255,255,255,0.9);
 }
